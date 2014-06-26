@@ -1,0 +1,21 @@
+[
+{
+  "modid": "letsModReboot",
+  "name": "Lets Mod Reboot",
+  "description": "A Mod made during Pahimars modding tutorial",
+  "version": "1.0",
+  "mcversion": "1.7.2",
+  "logoFile": "",
+  "url": "",
+  "updateUrl": "",
+  "authorList": [
+    "solvillan"
+  ],
+  "credits": "Let's mod reboot by pahimar.",
+  "parent": "",
+  "screenshots": [
+   ],
+  "dependencies": [
+  ]
+}
+]
