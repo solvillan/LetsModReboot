@@ -1,25 +1,18 @@
-package se.doverfelt.letsModReboot;
-
-import cpw.mods.fml.common.Mod;
-import cpw.mods.fml.common.SidedProxy;
-import cpw.mods.fml.common.event.FMLInitializationEvent;
-import cpw.mods.fml.common.event.FMLPostInitializationEvent;
-import cpw.mods.fml.common.event.FMLPreInitializationEvent;
-import se.doverfelt.letsModReboot.proxy.IProxy;
+package se.doverfelt.letsModReboot.proxy;
 
 /**
  * Copyright (c) 2014 Rickard Doverfelt
- *
+ * <p/>
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
  * in the Software without restriction, including without limitation the rights
  * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  * copies of the Software, and to permit persons to whom the Software is
  * furnished to do so, subject to the following conditions:
- *
+ * <p/>
  * The above copyright notice and this permission notice shall be included in
  * all copies or substantial portions of the Software.
- *
+ * <p/>
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -28,29 +21,5 @@ import se.doverfelt.letsModReboot.proxy.IProxy;
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-
-@Mod(modid = "letsModReboot", name = "Lets Mod Reboot", version = "1.0")
-public class LetsModReboot {
-
-    @Mod.Instance("LetsModReboot")
-    public static LetsModReboot instance;
-
-    @SidedProxy(clientSide = "se.doverfelt.letsModReboot.proxy.ClientProxy", serverSide = "se.doverfelt.letsModReboot.proxy.ServerProxy")
-    public static IProxy proxy;
-
-    @Mod.EventHandler
-    public void preInit(FMLPreInitializationEvent event) {
-
-    }
-
-    @Mod.EventHandler
-    public void init(FMLInitializationEvent event) {
-
-    }
-
-    @Mod.EventHandler
-    public void postInit(FMLPostInitializationEvent event) {
-
-    }
-
+public class ServerProxy extends CommonProxy {
 }
