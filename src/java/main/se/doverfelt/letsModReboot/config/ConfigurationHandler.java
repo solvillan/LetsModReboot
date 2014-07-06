@@ -1,4 +1,8 @@
-package se.doverfelt.letsModReboot.reference;
+package se.doverfelt.letsModReboot.config;
+
+import net.minecraftforge.common.config.Configuration;
+
+import java.io.File;
 
 /**
  * Copyright (c) 2014 Rickard Doverfelt
@@ -21,13 +25,27 @@ package se.doverfelt.letsModReboot.reference;
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-public final class Reference {
+public class ConfigurationHandler {
 
-    public static final String MOD_ID = "letsModReboot";
-    public static final String MOD_NAME = "Lets Mod Reboot";
-    public static final String VERSION = "@VERSION@";
-    public static final String FINGERPRINT = "@FINGERPRINT@";
-    public static final String SERVER_PROXY_NAME = "se.doverfelt.letsModReboot.proxy.ServerProxy";
-    public static final String CLIENT_PROXY_NAME = "se.doverfelt.letsModReboot.proxy.ClientProxy";
+    public static void init(File configFile) {
+
+        Configuration configuration = new Configuration(configFile);
+        boolean configValue = false;
+        try {
+            //Load File
+            configuration.load();
+
+            //Read Properties
+            configValue = configuration.get(configuration.CATEGORY_GENERAL, "configValue", true, "An example value").getBoolean(true);
+
+        } catch (Exception e) {
+            //Log the Exception
+        } finally {
+            configuration.save();
+        }
+
+        System.out.println("ConfigValue: " + configValue);
+
+    }
 
 }

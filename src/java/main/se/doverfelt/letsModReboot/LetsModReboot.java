@@ -5,6 +5,7 @@ import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import se.doverfelt.letsModReboot.config.ConfigurationHandler;
 import se.doverfelt.letsModReboot.proxy.IProxy;
 import se.doverfelt.letsModReboot.reference.Reference;
 
@@ -36,12 +37,12 @@ public class LetsModReboot {
     @Mod.Instance(Reference.MOD_ID)
     public static LetsModReboot instance;
 
-    @SidedProxy(clientSide = Reference.CLINET_PROXY_NAME, serverSide = Reference.SERVER_PROXY_NAME)
+    @SidedProxy(clientSide = Reference.CLIENT_PROXY_NAME, serverSide = Reference.SERVER_PROXY_NAME)
     public static IProxy proxy;
 
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
-
+        ConfigurationHandler.init(event.getSuggestedConfigurationFile());
     }
 
     @Mod.EventHandler
